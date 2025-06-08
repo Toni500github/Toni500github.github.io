@@ -1,1 +1,38 @@
-<p>test</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Browser Info</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2em;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    .info {
+      margin-top: 1em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Browser Info</h1>
+
+  <div class="info">
+    <strong>Browser User Agent:</strong>
+    <p id="browser"></p>
+  </div>
+
+  <div class="info">
+    <strong>Is JavaScript enabled?</strong>
+    <p id="js-status">Checking...</p>
+    <noscript><p style="color: red;">No</p></noscript>
+  </div>
+
+  <script>
+    document.getElementById('browser').textContent = navigator.userAgent;
+    document.getElementById('js-status').textContent = 'Yes';
+  </script>
+</body>
+</html>

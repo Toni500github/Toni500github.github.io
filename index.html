@@ -16,6 +16,7 @@
     }
   </style>
 </head>
+
 <body>
   <h1>Browser Info</h1>
 
@@ -23,19 +24,21 @@
     <strong>Browser User Agent:</strong>
     <p id="browser"></p>
   </div>
-
   <div class="info">
-    <strong>Is JavaScript enabled?</strong>
-    <noscript><p style="color: red;">No</p></noscript>
-    <div id="js-status"></div>
+    <strong>Device memory:</strong>
+    <p id="memory"></p>
   </div>
 
   <script>
     document.getElementById('browser').textContent = navigator.userAgent;
-    
-    const jsParagraph = document.createElement('p');
-    jsParagraph.textContent = 'Yes';
-    document.getElementById('js-status').appendChild(jsParagraph).style.color = "green";
+    document.getElementById('memory').textContent = navigator.deviceMemory;
   </script>
 </body>
+
+<noscript>
+  <body>
+   <p>The website may be just created, but damn you don't even have Javascript enabled??</p>
+  </body>
+</noscript>
+
 </html>

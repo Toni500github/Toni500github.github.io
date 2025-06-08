@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html>Add commentMore actions
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -21,23 +21,21 @@
 
   <div class="info">
     <strong>Browser User Agent:</strong>
-    <p id="browser">(loading...)</p>
+    <p id="browser"></p>
   </div>
 
   <div class="info">
     <strong>Is JavaScript enabled?</strong>
-    <p class="js-only" id="js-status" style="color: green;">Yes</p>
-    <noscript>
-      <p style="color: red;">No</p>
-    </noscript>
+    <noscript><p style="color: red;">No</p></noscript>
+    <div id="js-status"></div>
   </div>
 
   <script>
-    document.querySelectorAll('.js-only').forEach(el => {
-      el.style.display = 'block';
-    });
-
     document.getElementById('browser').textContent = navigator.userAgent;
+    
+    const jsParagraph = document.createElement('p');
+    jsParagraph.textContent = 'Yes';
+    document.getElementById('js-status').appendChild(jsParagraph).style.color = "green";
   </script>
 </body>
 </html>

@@ -21,18 +21,23 @@
 
   <div class="info">
     <strong>Browser User Agent:</strong>
-    <p id="browser"></p>
+    <p id="browser">(loading...)</p>
   </div>
 
   <div class="info">
     <strong>Is JavaScript enabled?</strong>
-    <p id="js-status">Checking...</p>
-    <noscript><p style="color: red;">No</p></noscript>
+    <p class="js-only" id="js-status" style="color: green;">Yes</p>
+    <noscript>
+      <p style="color: red;">No</p>
+    </noscript>
   </div>
 
   <script>
+    document.querySelectorAll('.js-only').forEach(el => {
+      el.style.display = 'block';
+    });
+
     document.getElementById('browser').textContent = navigator.userAgent;
-    document.getElementById('js-status').textContent = 'Yes';
   </script>
 </body>
 </html>
